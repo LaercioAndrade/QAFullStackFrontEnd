@@ -21,7 +21,7 @@ class CadastroPage{
     }
 
     inserirUserName(){
-        cy.get(Elements.userName()).type("testelaercio9")
+        cy.get(Elements.userName()).type("testelaercio1")
     }
 
     inserirEmail(){
@@ -70,12 +70,16 @@ class CadastroPage{
     }
 
     clicarBotãoRegister(){
+        cy.route('POST', '**/AccountCreateRequest').as('postCreateRequest')
         cy.get(Elements.btnRegister()).click();
     }
 
-    validaUserLogado(){
-        cy.get(Elements.userlogado()).contains("testelaercio9")   
-    }
+    validarUserLogado(){
+        cy.wait('@postCreateRequest').then((xhr) => {
+            expect(xhr.status).be.eq(200);
+        cy.get(Elements.userlogado()).contains("testelaercio1")   
+    })
+  } 
 }
 
 export default CadastroPage;

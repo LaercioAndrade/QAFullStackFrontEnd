@@ -30,5 +30,5 @@ When("informo os dados corretos", () => {
 
 Then("valido se o cadastro é realizado com sucesso", () => {
     Cadastro.clicarBotãoRegister();
-    Cadastro.validaUserLogado();
+    Cadastro.validarUserLogado();
 })
