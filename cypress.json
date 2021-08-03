@@ -1,0 +1,14 @@
+{
+    "baseUrl":"http://advantageonlineshopping.com/#/",
+    "viewportHeight": 900,
+    "viewportWidth": 1600,
+    "defaultCommandTimeout": 10000,
+
+    "video": false,
+    "videoCompression": 32,
+    "videoUploadOnPasses": true,
+
+    "reporterOptions": {
+        "overwrite": false
+    }
+}
