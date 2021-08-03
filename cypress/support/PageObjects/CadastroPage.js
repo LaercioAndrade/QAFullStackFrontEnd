@@ -77,7 +77,8 @@ class CadastroPage{
     validarUserLogado(){
         cy.wait('@postCreateRequest').then((xhr) => {
             expect(xhr.status).be.eq(200);
-        cy.get(Elements.userlogado()).contains("testelaercio1")   
+        cy.get(Elements.userlogado()).contains("testelaercio1") 
+        cy.screenshot();  
     })
   } 
 }

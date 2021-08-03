@@ -20,3 +20,13 @@ Then("realizo o login com sucesso", () => {
 })
 
 //CT02
+When("informo as credenciais inválidas", () => {
+    Login.informarUserNameInvalido();
+    Login.informarPassword();
+})
+
+Then("valido se aparece a mensagem de erro", () => {
+    Login.clicarBotãoSignIn();
+    Login.validarMsgDeLoginIncorreto();
+    cy.screenshot();
+})

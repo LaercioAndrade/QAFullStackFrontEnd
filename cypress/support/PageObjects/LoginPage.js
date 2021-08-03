@@ -32,7 +32,18 @@ class LoginPage{
         cy.wait('@postLoginRequest').then((xhr) => {
             expect(xhr.status).be.eq(200);
         cy.get(Elements.userlogado()).contains("testelaercio9")
-    })
-  }
+        })
+    }
+
+    informarUserNameInvalido(){
+        cy.get(Elements.userName()).type("teste123")
+    }
+
+    validarMsgDeLoginIncorreto(){
+        cy.wait('@postLoginRequest').then((xhr) => {
+            expect(xhr.status).be.eq(200);
+        cy.get(Elements.msgLoginIncorreto()).contains("Incorrect user name or password.")
+        })
+    }
 }
 export default LoginPage;

@@ -32,3 +32,4 @@ Then("valido se o cadastro é realizado com sucesso", () => {
     Cadastro.clicarBotãoRegister();
     Cadastro.validarUserLogado();
 })
+
